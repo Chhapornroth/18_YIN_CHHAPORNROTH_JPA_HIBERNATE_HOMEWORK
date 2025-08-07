@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  postgres_db:
+    image: postgres:latest
+    container_name: postgres_db
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+      POSTGRES_PASSWORD: 123
+    volumes:
+      - postgres_db:/var/lib/postgresql/data
+    restart: always
+
+  spring-boot-application:
+    container_name: spring-boot-application
+
+volumes:
+  postgres_db:
