@@ -12,6 +12,6 @@ LABEL authors="Y.CHHAPORNROTH"
 
 WORKDIR /app
 
-COPY --from=build /app/build/libs/*.jar app.jar
+COPY build/libs/*.jar app.jar
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
